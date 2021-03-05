@@ -1,0 +1,107 @@
+<?php
+/**
+ * Webkul Software
+ *
+ * @category Webkul
+ * @package Webkul_UspsEndiciaShipping
+ * @author Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license https://store.webkul.com/license.html
+ */
+?>
+<?php
+    $endiciaData = [
+        'statusUrl' => $block->getStatusUrl(),
+        'buyUrl' => $block->getBuyPostageUrl()
+    ];
+    ?>
+<?php if ($block->isAccountExists() !== ''): ?>
+    <fieldset class="endicia-account-container fieldset admin__fieldset fieldset-wide">
+        <div id="manage-endicia-account" data-bind="scope:'manage-endicia-account'">
+            <script type="text/x-magento-init">
+            {
+                "#manage-endicia-account": {
+                    "Magento_Ui/js/core/app": {
+                    "components": {
+                            "manage-endicia-account": {
+                                "component": "Webkul_UspsEndiciaShipping/js/view/manage-endicia"
+                            }
+                        }
+                    }
+                }
+            }
+            </script>
+            <script>
+            window.endicia = <?= /* @noEscape */ \Zend_Json::encode($endiciaData); ?>;
+            </script>
+            <section class="admin__page-section order-view-account-information" data-bind="event: {load: loadAccountDetails()}">
+                <div class="admin__page-section-item order-information">
+                    <div class="admin__page-section-item-title">
+                        <span class="title"><?= /* @noEscape */ __('Account Details') ?></span>
+                    </div>
+                    <div class="admin__page-section-item-content">
+                        <table class="admin__table-secondary order-information-table">
+                            <tbody>
+                                <tr>
+                                    <th><span><?= /* @noEscape */ __('Account Type') ?></span></th>
+                                    <td data-bind="text: accountType"></td>
+                                </tr>
+                                <tr>
+                                    <th><span><?= /* @noEscape */ __('Account ID') ?></span></th>
+                                    <td data-bind="text: accountId"></td>
+                                </tr>
+                                <tr>
+                                    <th><span><?= /* @noEscape */ __('Account Balance') ?></span></th>
+                                    <td data-bind="text: '$'+accountBalance()"></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <button id="save" data-bind="click: loadAccountDetails" type="button" class="action- scalable save primary">
+                                            <span class="ui-button-text">
+                                                <span><?= /* @noEscape */ __('Refresh Detail') ?></span>
+                                            </span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="admin__page-section-item order-account-information">
+                    <div class="admin__page-section-item-title">
+                        <span class="title"><?= /* @noEscape */ __('Buy Postage') ?></span>
+                    </div>
+                    <div class="admin__page-section-item-content">
+                        <table class="admin__table-secondary order-information-table">
+                            <tbody>
+                                <tr>
+                                    <th><label class="label"><?= /* @noEscape */ __('Amount(USD)') ?></label></th>
+                                    <td><input type="text" data-bind="value: postageAmount" class="admin__control-text" placeholder="<?= /* @noEscape */ __('Enter Amount') ?>" /></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <button id="save" data-bind="click: buyPostage" type="button" class="action- scalable save primary">
+                                            <span class="ui-button-text">
+                                                <span><?= /* @noEscape */ __('Buy Postage') ?></span>
+                                            </span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </fieldset>
+    <?php else: ?>
+    <fieldset class="endicia-account-container fieldset admin__fieldset fieldset-wide">
+        <div class="message-notice notice message" data-ui-id="message-notice">
+            <div><?= /* @noEscape */ __('You need to configure endicia account details first.  Store->Configuration->Sales->Shipping Methods Or')?>
+                <a target="_blank" href="https://www.endicia.com/resellers/multi-rate-service-signup?id=ITVZ7OCP6RC8EB1W/"><?= /* @noEscape */ __('Create Your Endicia Account')?></a>
+            </div>
+        </div>
+    </fieldset>
+    <?php endif; ?>

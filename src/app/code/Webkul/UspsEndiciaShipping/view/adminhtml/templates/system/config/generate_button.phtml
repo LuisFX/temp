@@ -1,0 +1,43 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_UspsEndiciaShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+?>
+
+<div class="pp-buttons-container">
+    <button id="generate_button" onclick="return false;">
+        <span><span><span><?= /* @noEscape */ $block->escapeHtml($block->getButtonLabel()); ?></span></span></span>
+    </button>
+</div>
+<div id="popup-mpdal" style="display:none;">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?= /* @noEscape */ __('New Passphrase'); ?></span></legend>
+        <div class="admin__field">
+            <label class="admin__field-label">Enter new passphrase(Optional)</label>
+            <div class="control">
+                <input type="text" id="passphrase" name="passphrase" class="admin__control-text" />
+            </div>
+        </div>
+    </fieldset>
+</div>
+<?php
+    $data = json_encode(
+        [
+            "generateUrl"  => $block->getAjaxUrl(),
+            "generateButton" => '#generate_button'
+        ]
+    );
+    ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Webkul_UspsEndiciaShipping/js/action/generate-passphrase": <?= /* @noEscape */ $data ?>
+        }
+    }
+</script>

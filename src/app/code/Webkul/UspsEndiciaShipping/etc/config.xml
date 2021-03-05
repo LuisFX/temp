@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+* Webkul Software
+*
+* @category Webkul
+* @package Webkul_MpUSPSShipping
+* @author Webkul
+* @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+* @license https://store.webkul.com/license.html
+*/ 
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <endicia>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Webkul\UspsEndiciaShipping\Model\Carrier</model>
+                <title>USPS Endicia</title>
+                <free_method />
+                <max_package_weight>70</max_package_weight>
+                <accountid backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <passphrase backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <!-- <test_url>https://elstestserver.endicia.com/LabelService/EwsLabelService.asmx?wsdl</test_url> -->
+                <live_url>https://LabelServer.Endicia.com/LabelService/EwsLabelService.asmx?WSDL</live_url>
+                <machinable>true</machinable>
+                <handling_type>F</handling_type>
+                <handling_action>O</handling_action>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+                <is_online>1</is_online>
+            </endicia>
+        </carriers>
+    </default>
+</config>

@@ -1,0 +1,19 @@
+{
+    "name": "webkul/usps-endicia-shipping",
+    "description": "Webkul Usps Endicia module",
+    "require": {
+        "magento/module-shipping": "100.3.*"
+    },
+    "version": "3.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Webkul\\UspsEndiciaShipping\\": ""
+        }
+    }
+}

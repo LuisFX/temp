@@ -1,0 +1,37 @@
+Legend
+
++ Features
+
+-------------------------------- Version 3.0.0 --------------------------------------
+	+ Module's version updated as per Magento 2.3.x
+	+ Bugs fixed.
+
+-------------------------------- Version 2.3.0 --------------------------------------
+	+ Bugs fixed.
+	+ Compatible with Magento 2.3.x
+	+ Removed Sandbox Environment.
+	+ Work with Production Environment Only.
+	+ Admin can enable Estimated Delivery Days for now.
+	+ Endicia Package Insurance Service Added.
+	+ Endicia Label Refund Feature Added.
+
+-------------------------------- Version 2.0.1 --------------------------------------
+	+ Compatible with Magento 2.2.* version.
+	+ Bugs fixed.
+	+ Removed Sandbox Environment.
+	+ Work with Production Environment Only.
+	+ Admin can enable Estimated Delivery Days for now.
+	+ Endicia Package Insurance Service Added.
+	+ Endicia Label Refund Feature Added.
+
+-------------------------------- Version 2.0.0 --------------------------------------
+	+ Compatible with Magento 2.1.* version.
+	+ Admin can Buy Endicia Postage.
+	+ Admin can check the account details.
+	+ Admin can enable or disable USPS Endicia Shipping method.
+	+ Admin can set the USPS Endicia shipping method name that will be shown from front side.
+	+ Admin can set packages request type.
+	+ Endicia shipping rate will be calculated from store's address.
+	+ Ability to download Invoice and Shipping Slip easily.
+  + Admin can download USPS Endicia Shipment Label in PDF format.
+	+ Supports International Shipping Rates and Shipping Label.

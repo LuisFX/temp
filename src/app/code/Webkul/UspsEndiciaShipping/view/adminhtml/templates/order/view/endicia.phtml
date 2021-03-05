@@ -1,0 +1,112 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_UspsEndiciaShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+$trackings = $block->getShipment()->getAllTracks();
+?>
+<div id="header-mpdal" style="display:none;">
+    <div class="trackingWrapper">
+        <form class="refund-form" id="refund-form" method="post" autocomplete="off">
+            <div class="admin__field">
+                <label for="tracking" class="admin__field-label">
+                    <span><?= /* @noEscape */ __('Select Tracking Numbers') ?></span>
+                </label>
+                <div class="admin__field-control">
+                    <select name="tracking" class="validate-select admin__control-multiselect" multiple style="margin: 0px; width: 796px; height: 102px;">
+                    <?php
+                    foreach ($trackings as $value) { ?>
+                                <option value="<?= $block->escapeHtml($value->getNumber()) ?>"><?= $block->escapeHtml($value->getNumber()) ?></option>   
+                    <?php    } ?>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="admin__page-section-item order-account-information">
+        <div class="admin__page-section-item-title">
+            <span class="title"><?= /* @noEscape */ __('Cancel Label Response') ?></span>
+        </div>
+        <div class="admin__page-section-item-content">
+            <table id="refund_response" class="admin__table-secondary order-account-information-table"></table>
+        </div>
+    </div>
+</div>
+
+<script>
+require(['jquery', 'Magento_Ui/js/modal/modal', 'Magento_Ui/js/modal/alert'], function($, modal, alert){
+
+//<![CDATA[
+    var options = {
+        type: 'slide',
+        responsive: true,
+        innerScroll: true,
+        title: 'Endicia Cancel Label Request',
+        buttons: [
+            {
+                text: $.mage.__('Close'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            },
+            {
+                text: $.mage.__('Submit Request'),
+                class: '',
+                click: function () {
+                    itemData = {};
+                    itemData.form_key = window.FORM_KEY;
+                    itemData.tracking = [];
+                    $('#refund-form').serializeArray().each(function(formValue) {
+                        itemData.tracking.push(formValue.value);
+                    });
+                    
+                    $.ajax({
+                        showLoader: true,
+                        url: "<?= /* @noEscape */ $block->getUrl('endicia/account/createRefund', ['_secure' => true]) ?>",
+                        type: 'POST',
+                        data: itemData
+                    }).done(function (response) {
+                        $('#refund_response').html('');
+                        if (response.error) {
+                            alert({
+                                title: 'Error!',
+                                content: response.msg,
+                                actions: {
+                                    always: function () {
+                                    }
+                                }
+                            });
+                        } else {
+                            var response = response.response;
+                            var html = '';
+                            if (response[0]) {
+                                $.each(response, function (index, data) {
+                                    html+='<tbody class="refund-data"><tr><th>PicNumber</th><td>'+data.PicNumber+'</td></tr><tr><th>PieceNumber</th><td>'+data.PieceNumber+'</td></tr><tr><th>RefundStatus</th><td>'+data.RefundStatus+'</td></tr><tr><th>RefundStatusMessage</th><td>'+data.RefundStatusMessage+'</td></tr></tbody>';
+                                });
+                            } else {
+                                html+='<tbody class="refund-data"><tr><th>PicNumber</th><td>'+response.PicNumber+'</td></tr><tr><th>PieceNumber</th><td>'+response.PieceNumber+'</td></tr><tr><th>RefundStatus</th><td>'+response.RefundStatus+'</td></tr><tr><th>RefundStatusMessage</th><td>'+response.RefundStatusMessage+'</td></tr></tbody>';
+                            }
+                            
+                            $('#refund_response').append(html);
+                        }
+                        
+                    });
+                }
+            }
+        ]
+    };
+
+    var popup = modal(options, $('#header-mpdal'));
+    $("#endicia_refund").on('click',function(){ 
+        $('#refund-form')[0].reset();
+        $("#header-mpdal").modal("openModal");
+    });
+//]]>
+});
+</script>

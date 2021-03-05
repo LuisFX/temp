@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software
+ *
+ * @category  Webkul
+ * @package   Webkul_UspsEndiciaShipping
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+ -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Webkul\UspsEndiciaShipping\Api\EndiciaManagementInterface" type="Webkul\UspsEndiciaShipping\Model\EndiciaManagement" />
+    <type name="Webkul\UspsEndiciaShipping\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Webkul\UspsEndiciaShipping\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">endicia_log_handler</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Webkul\UspsEndiciaShipping\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Shipping\Block\Adminhtml\View">
+        <plugin name="addMyButton" type="Webkul\UspsEndiciaShipping\Block\Adminhtml\Order\View\ButtonList"/>
+    </type>
+
+    <type name="Magento\Sales\Model\Order\Shipment\Track">
+        <plugin name="afterGetNumber" type="Webkul\UspsEndiciaShipping\Plugin\Sales\Model\Order\Shipment\Track"/>
+    </type>
+</config>

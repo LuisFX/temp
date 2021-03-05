@@ -1,0 +1,103 @@
+"Endicia Account","Endicia Account"
+"Cancel Shipping Label","Cancel Shipping Label"
+"Generate New Passphrase","Generate New Passphrase"
+"Enter Postage Amount to Buy","Enter Postage Amount to Buy"
+"Please select tracking number(s)","Please select tracking number(s)"
+"Manage Endicia Account","Manage Endicia Account"
+"ORIGIN NOT US COUNTRY - Requested origin is not US country","ORIGIN NOT US COUNTRY - Requested origin is not US country"
+"Estimated Delivery-%1 days","Estimated Delivery-%1 days"
+"For some reason we can't retrieve tracking info right now.","For some reason we can't retrieve tracking info right now."
+"Can't retrieve tracking info right now.","Can't retrieve tracking info right now."
+"Height, width and length should be equal or greater than %1","Height, width and length should be equal or greater than %1"
+"Service type does not match","Service type does not match"
+IrregularParcel,IrregularParcel
+Letter,Letter
+Parcel,Parcel
+"Large Parcel","Large Parcel"
+Card,Card
+Flat,Flat
+FlatRateCardboardEnvelope,FlatRateCardboardEnvelope
+FlatRateWindowEnvelope,FlatRateWindowEnvelope
+"Flat Rate Envelope","Flat Rate Envelope"
+"Small Flat-Rate Envelope","Small Flat-Rate Envelope"
+"Small Flat-Rate Box","Small Flat-Rate Box"
+"Medium Flat-RateBox","Medium Flat-RateBox"
+"Large Flat-Rate Box","Large Flat-Rate Box"
+"Legal Flat-Rate Envelope","Legal Flat-Rate Envelope"
+"Padded Flat-Rate Envelope","Padded Flat-Rate Envelope"
+"Gift Card Flat-Rate Envelope","Gift Card Flat-Rate Envelope"
+"Regional Rate BoxA","Regional Rate BoxA"
+"Regional Rate BoxB","Regional Rate BoxB"
+Documents,Documents
+"Not Required","Not Required"
+"Adult Signature","Adult Signature"
+"Adult Signature Restricted Delivery","Adult Signature Restricted Delivery"
+"Signature Confirmation","Signature Confirmation"
+"Delivery Confirmation","Delivery Confirmation"
+None,None
+Endicia,Endicia
+UspsOnline,UspsOnline
+ThirdParty,ThirdParty
+"Select Mailpeice Shape","Select Mailpeice Shape"
+"Flat Rate Cardboard Envelope","Flat Rate Cardboard Envelope"
+"Small Flat Rate Envelope","Small Flat Rate Envelope"
+"Small Flat Rate Box","Small Flat Rate Box"
+"Medium Flat RateBox","Medium Flat RateBox"
+"Large Flat Rate Box","Large Flat Rate Box"
+"Priority Mail Express","Priority Mail Express"
+"First Class Package Service","First Class Package Service"
+"Library Mail","Library Mail"
+"Media Mail","Media Mail"
+"Priority Mail","Priority Mail"
+"First Class Package International Service","First Class Package International Service"
+"Priority Mail International","Priority Mail International"
+"Priority Mail Express International","Priority Mail Express International"
+"Global Express Guaranteed","Global Express Guaranteed"
+"Endicia Global Service","Endicia Global Service"
+"Account Details","Account Details"
+"Account Type","Account Type"
+"Account ID","Account ID"
+"Account Balance","Account Balance"
+"Refresh Detail","Refresh Detail"
+"Buy Postage","Buy Postage"
+Amount(USD),Amount(USD)
+"Enter Amount","Enter Amount"
+"You need to configure endicia account details first.  Store->Configuration->Sales->Shipping Methods Or","You need to configure endicia account details first.  Store->Configuration->Sales->Shipping Methods Or"
+"Create Your Endicia Account","Create Your Endicia Account"
+"Select Tracking Numbers","Select Tracking Numbers"
+"Cancel Label Response","Cancel Label Response"
+"The Endicia Professional plan enables you to seamlessly integrate USPS® fulfillment into your shipping operations and create shipping labels using an advanced, feature-rich shipping solution. Obtain a Account Number and Passphrase","The Endicia Professional plan enables you to seamlessly integrate USPS® fulfillment into your shipping operations and create shipping labels using an advanced, feature-rich shipping solution. Obtain a Account Number and Passphrase"
+"New Passphrase","New Passphrase"
+Close,Close
+"Submit Request","Submit Request"
+Continue,Continue
+Cancel,Cancel
+"Server Error","Server Error"
+"New Passphrase Generated","New Passphrase Generated"
+"Field ","Field "
+" is required."," is required."
+"USPS Endicia","USPS Endicia"
+"Enabled for Checkout","Enabled for Checkout"
+Title,Title
+"Account Number","Account Number"
+Passphrase,Passphrase
+Machinable,Machinable
+"Endicia Mail Class","Endicia Mail Class"
+"Free Method","Free Method"
+"Enable Free Shipping Threshold","Enable Free Shipping Threshold"
+"Free Shipping Amount Threshold","Free Shipping Amount Threshold"
+"Endicia Mailpiece Shape","Endicia Mailpiece Shape"
+"Show Estimated Delivery Days","Show Estimated Delivery Days"
+"Estimated Delivery days will be display for USA and available Methods.","Estimated Delivery days will be display for USA and available Methods."
+"Enabled Endicia Insurance","Enabled Endicia Insurance"
+"Insurance Type","Insurance Type"
+"Select Mailpiece Shape Allowed for Insurance","Select Mailpiece Shape Allowed for Insurance"
+"Ship to Applicable Countries","Ship to Applicable Countries"
+"Ship to Specific Countries","Ship to Specific Countries"
+"Maximum Package Weight (Please consult your shipping carrier for maximum supported shipping weight)","Maximum Package Weight (Please consult your shipping carrier for maximum supported shipping weight)"
+"Calculate Handling Fee","Calculate Handling Fee"
+"Handling Applied","Handling Applied"
+"Handling Fee","Handling Fee"
+"Displayed Error Message","Displayed Error Message"
+"Show Method if Not Applicable","Show Method if Not Applicable"
+"Sort Order","Sort Order"

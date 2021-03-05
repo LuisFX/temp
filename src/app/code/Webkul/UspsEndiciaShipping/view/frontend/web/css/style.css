@@ -1,0 +1,21 @@
+.admin__table-secondary tbody tr:nth-child(odd) th, .admin__table-secondary tbody tr:nth-child(odd) td {
+    background-color: #f1f1f1;
+}
+.action.scalable{
+    float: right;
+}
+.defined-amount{
+    width: 58px;
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+    background: rgb(107, 93, 83);
+    color: #fff;
+    font-weight: 600;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+}
+.note{
+    font-size: 1.1rem;
+}
